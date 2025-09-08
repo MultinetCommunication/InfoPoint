@@ -54,7 +54,8 @@
           }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
             html += `<p>${wagen.sicherheit_url}Sicherheitskonzept anzeigen</a></p>`;
-          } else {
+          }
+          else {
             html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
           }
           infoDiv.innerHTML = html;
