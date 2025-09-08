@@ -25,11 +25,16 @@
         const infoDiv = document.getElementById("info");
 
         if (wagen) {
-          infoDiv.innerHTML = `
+          let html = `
             <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
             <p><strong>Standort:</strong> ${wagen.baustelle}</p>
-            <p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>
           `;
+          if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
+            html += `<p>${wagen.sicherheit_url}Sicherheitskonzept anzeigen</a></p>`;
+          } else {
+            html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
+          }
+          infoDiv.innerHTML = html;
         } else {
           infoDiv.innerHTML = `<p>Kein Eintrag für Bauwagen-ID <strong>${id}</strong> gefunden.</p>`;
         }
