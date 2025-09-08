@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Sicherheitskonzept Bauwagen</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2em; background: #f9f9f9; }
+    h1 { color: #333; }
+    .info { background: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    a { color: #0078d4; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>Sicherheitskonzept für Bauwagen</h1>
+  <div class="info" id="info">Lade Daten...</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    fetch("bauwagen.json")
+      .then(response => response.json())
+      .then(data => {
+        const wagen = data.find(entry => entry.id === id);
+        const infoDiv = document.getElementById("info");
+
+        if (wagen) {
+          let html = `
+            <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
+            <p><strong>Standort:</strong> ${wagen.baustelle}</p>
+          `;
+          if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
+            html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
+          } else {
+            html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
+          }
+          infoDiv.innerHTML = html;
+        } else {
+          infoDiv.innerHTML = `<p>Kein Eintrag für Bauwagen-ID <strong>${id}</strong> gefunden.</p>`;
+        }
+      })
+      .catch(error => {
+        document.getElementById("info").innerHTML = `<p>Fehler beim Laden der Daten.</p>`;
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
