@@ -38,7 +38,7 @@
     fetch("daten.json")
       .then(response => response.json())
       .then(data => {
-        const eintrag = data[0]; // Beispiel: nimm den ersten Eintrag
+        const eintrag = data[0]; 
         const infoDiv = document.getElementById("info");
 
         if (eintrag) {
