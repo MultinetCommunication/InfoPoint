@@ -53,7 +53,7 @@
             html += `<p><strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a>)</p>`;
           }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
-            html += `<p>${wagen.sicherheit_url}Sicherheitskonzept anzeigen</a></p>`;
+            html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
           } else {
             html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
           }
