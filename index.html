@@ -1,73 +1,44 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>InfoPoint</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2em;
-      background: #f9f9f9;
-    }
-    h1 {
-      color: #333;
-    }
-    .info {
-      background: #fff;
-      padding: 1em;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #0078d4;
-      text-decoration: none;
-    }
-    .logo {
-      max-width: 200px;
-      margin-bottom: 1em;
-      display: block;
-    }
-  </style>
 </head>
 <body>
-  <img src="logo.png" alt="Logo" class="logo">
+<img src="logo.png" alt="Logo" class="logo">
+  <h1>Multinet InfoPoint</h1>
   <h1>InfoPoint</h1>
-  <div class="info" id="info">Lade Daten...</div>
+<div class="info" id="info">Lade Daten...</div>
 
-  <script>
-    fetch("bauwagen_erweitert.json")
-      .then(response => response.json())
-      .then(data => {
-        const eintrag = data[0]; 
-        const infoDiv = document.getElementById("info");
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 
-        if (eintrag) {
-          let html = `
-            <p><strong>ID:</strong> ${eintrag.id}</p>
-            <p><strong>Standort:</strong> ${eintrag.standort}</p>
-          `;
+fetch("bauwagen_erweitert.json")
+.then(response => response.json())
+.then(data => {
+const wagen = data.find(entry => entry.id === id);
+const infoDiv = document.getElementById("info");
 
-          if (eintrag.name && typeof eintrag.name === "string" && eintrag.name.trim() !== "") {
-            html += `<p><strong>Name:</strong> ${eintrag.name}${eintrag.tel ? ` — ${eintrag.tel}` : ""}</p>`;
-            if (eintrag.tel && String(eintrag.tel).trim() !== "") {
-              html += `<p><a href="tel:${eintrag.tel}">Telefonnummer wählen</a></p>`;
-            }
-          }
-
-          if (eintrag.url && typeof eintrag.url === "string" && eintrag.url.trim() !== "") {
-            html += `<p><a href="${eintrag.url}" target="_blank" rel="noopener">Weitere Infos</a></p>`;
-          } else {
-            html += `<p><em>Keine weiteren Informationen verfügbar.</em></p>`;
-          }
-
-          infoDiv.innerHTML = html;
-        } else {
-          infoDiv.innerHTML = `<p>Kein Eintrag gefunden.</p>`;
-        }
-      })
-      .catch(error => {
-        document.getElementById("info").innerHTML = `<p>Fehler beim Laden der Daten.</p>`;
-        console.error(error);
-      });
-  </script>
+if (wagen) {
+let html = `
+           <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
+           <p><strong>Standort:</strong> ${wagen.baustelle}</p>
+         `;
+if (wagen.bauleiter_name && typeof wagen.bauleiter_name {
+html += `<p><a strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a></p>`;
+html += `<p><a href="tel:${wagen.bauleiter_tel}" target="_blank">Telefonnummer wählen</a></p>`;
+}
+if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
+html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
+} else {
+html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
+}
+infoDiv.innerHTML = html;
+} else {
+infoDiv.innerHTML = `<p>Kein Eintrag für Bauwagen-ID <strong>${id}</strong> gefunden.</p>`;
+}
+})
+.catch(error => {
+document.getElementById("info").innerHTML = `<p>Fehler beim Laden der Daten.</p>`;
+console.error(error);
+});
+</script>
 </body>
+</html>
+~
