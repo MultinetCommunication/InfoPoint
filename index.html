@@ -17,15 +17,36 @@
       padding: 1em;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
     }
     a {
       color: #0078d4;
       text-decoration: none;
     }
     img.logo.png {
-      max-width: 200px;
+      max-width: 600px; /* 3x größer */
       margin-bottom: 1em;
       display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Mobile Anpassungen */
+    @media (max-width: 700px) {
+      body {
+        padding: 0.5em;
+      }
+      img.logo.png {
+        max-width: 90vw;
+      }
+      .info {
+        padding: 0.5em;
+        max-width: 98vw;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
