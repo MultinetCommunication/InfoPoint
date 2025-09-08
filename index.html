@@ -51,7 +51,7 @@
           `;
           if (wagen.bauleiter_name && typeof wagen.bauleiter_name === "string" && wagen.bauleiter_name.trim() !== "")
             html += `<p><strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a></p>`;
-            html += `<p><a href="tel{wagen.bauleiter_tel}" target="_blank">Telefonnummer wählen</a></p>`;
+            html += `<p><a href="tel${wagen.bauleiter_tel}" target="_blank">Telefonnummer wählen</a></p>`;
           }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
             html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
