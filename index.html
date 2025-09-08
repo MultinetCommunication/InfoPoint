@@ -49,7 +49,7 @@
             <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
             <p><strong>Standort:</strong> ${wagen.baustelle}</p>
           `;
-          if (wagen.bauleiter_name && typeof wagen.bauleiter_name
+          if (wagen.bauleiter_name && typeof wagen.bauleiter_name === "string" && wagen.sicherheit_url.trim() !== "") {
             html += `<p><strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a></p>`;
             html += `<p><a href="tel${wagen.bauleiter_tel}" target="_blank">Telefonnummer wählen</a></p>`;
           }
