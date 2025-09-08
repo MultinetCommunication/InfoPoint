@@ -50,7 +50,7 @@
             <p><strong>Standort:</strong> ${wagen.baustelle}</p>
           `;
           if (wagen.bauleiter_tel && typeof wagen.bauleiter_tel === "string" && wagen.bauleiter_tel.trim() !== "") {
-            html += `<p><a href= tel:"+41775271348" target="_blank">Verantwortlicher Bauleiter anrufen</a></p>`;
+            html += `<p><a href= tel:+41775271348 target="_blank">Verantwortlicher Bauleiter anrufen</a></p>`;
           }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
             html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
