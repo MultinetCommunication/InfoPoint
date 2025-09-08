@@ -2,12 +2,12 @@
   {
     "id": "A118",
     "baustelle": "Bulle",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 079",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 089",
@@ -17,7 +17,7 @@
   {
     "id": "A 116",
     "baustelle": "Bulle",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 050",
@@ -32,17 +32,17 @@
   {
     "id": "A 019",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 085",
     "baustelle": "Niederönz",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 016",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 112",
@@ -52,7 +52,7 @@
   {
     "id": "A 009",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 048",
@@ -62,7 +62,7 @@
   {
     "id": "A 123",
     "baustelle": "Bulle",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 090",
@@ -77,37 +77,37 @@
   {
     "id": "A 035",
     "baustelle": "Niederönz",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 086",
     "baustelle": "Sursee",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 036",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 061",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 097",
     "baustelle": "Niederönz",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 078",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 115",
     "baustelle": "Giubiasco",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 008",
@@ -117,22 +117,22 @@
   {
     "id": "A 111",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 032",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 117",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 096",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 098",
@@ -147,7 +147,7 @@
   {
     "id": "A 051",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 012",
@@ -162,26 +162,26 @@
   {
     "id": "A 095",
     "baustelle": "Giubiasco",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 114",
     "baustelle": "Zürich",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 060",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 003",
     "baustelle": "Reserve",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   },
   {
     "id": "A 119",
     "baustelle": "Bulle",
-    "sicherheit_url": NaN
+    "sicherheit_url": null
   }
 ]
