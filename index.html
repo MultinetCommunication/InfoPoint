@@ -18,7 +18,7 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    fetch("bauwagen.json")
+    fetch("https://marcjegerlehner.github.io/InfoPoint/bauwagen.json")
       .then(response => response.json())
       .then(data => {
         const wagen = data.find(entry => entry.id === id);
