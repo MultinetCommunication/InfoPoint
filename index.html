@@ -8,17 +8,18 @@
     h1 { color: #333; }
     .info { background: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     a { color: #0078d4; text-decoration: none; }
+    img.logo { max-width: 200px; margin-bottom: 1em; }
   </style>
 </head>
 <body>
-  <h1>Sicherheitskonzept für Bauwagen</h1>
+  <img src="logo.png" alt="Firmenlogo" class="logoh1>
   <div class="info" id="info">Lade Daten...</div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    fetch("https://raw.githubusercontent.com/MarcJegerlehner/InfoPoint/main/bauwagen.json")
+    fetch("bauwagen_erweitert.json")
       .then(response => response.json())
       .then(data => {
         const wagen = data.find(entry => entry.id === id);
@@ -29,8 +30,11 @@
             <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
             <p><strong>Standort:</strong> ${wagen.baustelle}</p>
           `;
+          if (wagen.bauleiter_name && wagen.bauleiter_tel) {
+            html += `<p><strong>Bauleiter:</strong> <a href="tel:${wagen.bauleitergen.bauleiter_name}</a></p>`;
+          }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
-            html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
+            html += `<p>${wagen.sicherheit_url}Sicherheitskonzept anzeigen</a></p>`;
           } else {
             html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
           }
@@ -42,8 +46,6 @@
       .catch(error => {
         document.getElementById("info").innerHTML = `<p>Fehler beim Laden der Daten.</p>`;
         console.error(error);
-        html += `<p><strong>Bauleiter:</strong> <a href="tel:${leiter_tel}${wagen.bauleiter_name}</a></p>`;
-
       });
   </script>
 </body>
