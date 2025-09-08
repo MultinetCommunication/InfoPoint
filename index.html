@@ -51,6 +51,7 @@
           `;
           if (wagen.bauleiter_name && wagen.bauleiter_tel) {
             html += `<p><strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a>)</p>`;
+            html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
           }
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
             html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
