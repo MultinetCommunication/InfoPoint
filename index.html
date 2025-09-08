@@ -42,6 +42,8 @@
       .catch(error => {
         document.getElementById("info").innerHTML = `<p>Fehler beim Laden der Daten.</p>`;
         console.error(error);
+        html += `<p><strong>Bauleiter:</strong> <a href="tel:${leiter_tel}${wagen.bauleiter_name}</a></p>`;
+
       });
   </script>
 </body>
