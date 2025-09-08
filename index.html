@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Sicherheitskonzept Bauwagen</title>
+  <title>InfoPoint</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
       color: #0078d4;
       text-decoration: none;
     }
-    img.logo.png {
+    .logo {
       max-width: 200px;
       margin-bottom: 1em;
       display: block;
@@ -35,32 +35,34 @@
   <div class="info" id="info">Lade Daten...</div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-
-    fetch("bauwagen_erweitert.json")
+    fetch("daten.json")
       .then(response => response.json())
       .then(data => {
-        const wagen = data.find(entry => entry.id === id);
+        const eintrag = data[0]; // Beispiel: nimm den ersten Eintrag
         const infoDiv = document.getElementById("info");
 
-        if (wagen) {
+        if (eintrag) {
           let html = `
-            <p><strong>Bauwagen-ID:</strong> ${wagen.id}</p>
-            <p><strong>Standort:</strong> ${wagen.baustelle}</p>
+            <p><strong>ID:</strong> ${eintrag.id}</p>
+            <p><strong>Standort:</strong> ${eintrag.standort}</p>
           `;
-          if (wagen.bauleiter_name && typeof wagen.bauleiter_name {
-            html += `<p><a strong>Bauleiter:</strong> ${wagen.bauleiter_name} ${wagen.bauleiter_tel}</a></p>`;
-            html += `<p><a href="tel:${wagen.bauleiter_tel}" target="_blank">Telefonnummer wählen</a></p>`;
+
+          if (eintrag.name && typeof eintrag.name === "string" && eintrag.name.trim() !== "") {
+            html += `<p><strong>Name:</strong> ${eintrag.name}${eintrag.tel ? ` — ${eintrag.tel}` : ""}</p>`;
+            if (eintrag.tel && String(eintrag.tel).trim() !== "") {
+              html += `<p><a href="tel:${eintrag.tel}">Telefonnummer wählen</a></p>`;
+            }
           }
-          if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.trim() !== "") {
-            html += `<p><a href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a></p>`;
+
+          if (eintrag.url && typeof eintrag.url === "string" && eintrag.url.trim() !== "") {
+            html += `<p><a href="${eintrag.url}" target="_blank" rel="noopener">Weitere Infos</a></p>`;
           } else {
-            html += `<p><em>Für diesen Bauwagen ist aktuell kein Sicherheitskonzept hinterlegt.</em></p>`;
+            html += `<p><em>Keine weiteren Informationen verfügbar.</em></p>`;
           }
+
           infoDiv.innerHTML = html;
         } else {
-          infoDiv.innerHTML = `<p>Kein Eintrag für Bauwagen-ID <strong>${id}</strong> gefunden.</p>`;
+          infoDiv.innerHTML = `<p>Kein Eintrag gefunden.</p>`;
         }
       })
       .catch(error => {
@@ -69,5 +71,3 @@
       });
   </script>
 </body>
-</html>
-
