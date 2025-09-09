@@ -113,9 +113,15 @@
           // Bauleiter
           document.getElementById("bauleiterSection").innerHTML = `
             <div style="margin-top:1.5em;">
-              <span class="info-label">Bauleiter/chef de chantier/capocantiere:</span> ${wagen.bauleiter_name || "-"}
+              <span class="info-label">
+              Bauleiter<br>
+              chef de chantier<br>
+              capocantiere:</span> ${wagen.bauleiter_name || "-"}
               <br>
-              <span class="info-label">Telefon/téléphone/telefono:</span> <a href="tel:${wagen.bauleiter_tel}">${wagen.bauleiter_tel || "-"}</a>
+              <span class="info-label">
+              Telefon<br>
+              téléphone<br>
+              telefono:</span> <a href="tel:${wagen.bauleiter_tel}">${wagen.bauleiter_tel || "-"}</a>
             </div>`;
           // Sicherheitskonzept
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.length > 10) {
@@ -125,8 +131,8 @@
           } else {
             document.getElementById("sicherheitsSection").innerHTML = `
               <div style="margin-top:1.5em;color:#d32f2f;">
-                Zu diesem Standort ist kein Sicherheitskonzept abgelegt.
-                Aucun concept de sécurité n’est déposé pour ce site.
+                Zu diesem Standort ist kein Sicherheitskonzept abgelegt.<br>
+                Aucun concept de sécurité n’est déposé pour ce site.<br>
                 Nessun concetto di sicurezza è depositato per questo site.
                 </div>
             `;
