@@ -140,17 +140,14 @@
     <a class="tile" href="tel:145">TOX (Vergiftung) 145</a>
   </div>
   <script>
-    // Bauwagen-ID aus der URL holen
-    function getBauwagenId() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('bauwagen');
-    }
+    // Nur den Wert für 'id' holen und für den Retour-Button übernehmen
     document.addEventListener('DOMContentLoaded', function() {
-      const bauwagenId = getBauwagenId();
+      const params = new URLSearchParams(window.location.search);
+      const bauwagenId = params.get('id');
       if (bauwagenId) {
         const retourBtn = document.querySelector('.btn-retour');
         if (retourBtn) {
-          retourBtn.href = 'de.html?bauwagen=' + encodeURIComponent(bauwagenId);
+          retourBtn.href = 'de.html?id=' + encodeURIComponent(bauwagenId);
         }
       }
     });
