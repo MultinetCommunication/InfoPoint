@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sicherheitskonzept Bauwagen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- WICHTIG: Für mobile Darstellung -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -40,8 +40,6 @@
       margin: 0.5em auto 1em auto;
       display: block;
     }
-
-    /* Desktop Anpassung */
     @media (min-width: 700px) {
       body {
         padding: 2em;
@@ -57,14 +55,70 @@
         max-width: 700px;
       }
     }
+    /* Wrapper Styles */
+    #wrapper {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s;
+    }
+    #wrapper.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #showBauwagenBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10001;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background: #0078d4;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #showBauwagenBtn:hover {
+      background: #005fa3;
+    }
+    #wrapper-iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      z-index: 10000;
+    }
   </style>
 </head>
 <body>
+  <div id="wrapper">
+    <iframe id="wrapper-iframe" src="https://mncinfopoint.my.canva.site/de"></iframe>
+    <button id="showBauwagenBtn">Kontakt Bauleiter/spezifisches Sicherheitskonzept</button>
+  </div>
+
   <img src="logo.png" alt="Logo" class="logo png">
   <h1>InfoPoint</h1>
   <div class="info" id="info">Lade Daten...</div>
 
   <script>
+    // Wrapper-Logik
+    document.getElementById('showBauwagenBtn').addEventListener('click', function() {
+      const wrapper = document.getElementById('wrapper');
+      wrapper.classList.add('hide');
+      setTimeout(() => {
+        wrapper.style.display = 'none';
+      }, 500); // Warten auf das Fade-Out
+    });
+
+    // Bauwagen-Logik wie vorher
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
