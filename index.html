@@ -120,13 +120,15 @@
           // Sicherheitskonzept
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.length > 10) {
             document.getElementById("sicherheitsSection").innerHTML = `
-              <a class="btn-sicherheitskonzept" href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept anzeigen</a>
+              <a class="btn-sicherheitskonzept" href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept/concept de sécurité/concetto di sicurezza</a>
             `;
           } else {
             document.getElementById("sicherheitsSection").innerHTML = `
               <div style="margin-top:1.5em;color:#d32f2f;">
-                Zu diesem Standort ist kein Sicherheitskonzept abgelegt
-              </div>
+                Zu diesem Standort ist kein Sicherheitskonzept abgelegt.
+                Aucun concept de sécurité n’est déposé pour ce site.
+                Nessun concetto di sicurezza è depositato per questo site.
+                </div>
             `;
           }
         } else {
