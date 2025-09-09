@@ -139,5 +139,21 @@
     <a class="tile" href="tel:1414">REGA (Flugrettung) 1414</a>
     <a class="tile" href="tel:145">TOX (Vergiftung) 145</a>
   </div>
+  <script>
+    // Bauwagen-ID aus der URL holen
+    function getBauwagenId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('bauwagen');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const bauwagenId = getBauwagenId();
+      if (bauwagenId) {
+        const retourBtn = document.querySelector('.btn-retour');
+        if (retourBtn) {
+          retourBtn.href = 'de.html?bauwagen=' + encodeURIComponent(bauwagenId);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
