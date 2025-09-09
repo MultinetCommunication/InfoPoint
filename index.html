@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>MNC InfoPoint – Bauwagen</title>
+  <title>MNC InfoPoint</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -89,14 +89,14 @@
   </div>
   <div class="details" id="details">
     <div style="text-align:center;">
-      <span class="info-label">Bauwagen-ID:</span>
+      <span class="info-label">ID:</span>
       <span id="bauwagenId"></span>
     </div>
     <div id="bauleiterSection"></div>
     <div id="sicherheitsSection"></div>
   </div>
   <div class="notfound" id="notfound" style="display:none;">
-    Kein Eintrag für diese Bauwagen-ID gefunden.
+    Kein Eintrag für diese Bauwagen-ID gefunden/Aucune entrée trouvée pour cet ID de roulotte de chantier/Nessuna voce trovata per questo ID di baracca da cantiere.
   </div>
   <script>
     // Bauwagen-ID aus der URL holen
@@ -113,9 +113,9 @@
           // Bauleiter
           document.getElementById("bauleiterSection").innerHTML = `
             <div style="margin-top:1.5em;">
-              <span class="info-label">Zuständiger Bauleiter:</span> ${wagen.bauleiter_name || "-"}
+              <span class="info-label">Bauleiter/chef de chantier/capocantiere:</span> ${wagen.bauleiter_name || "-"}
               <br>
-              <span class="info-label">Telefon:</span> <a href="tel:${wagen.bauleiter_tel}">${wagen.bauleiter_tel || "-"}</a>
+              <span class="info-label">Telefon/téléphone/telefono:</span> <a href="tel:${wagen.bauleiter_tel}">${wagen.bauleiter_tel || "-"}</a>
             </div>`;
           // Sicherheitskonzept
           if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.length > 10) {
