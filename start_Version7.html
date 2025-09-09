@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>MNC InfoPoint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .logo {
+      width: 100%;
+      max-width: 300px;
+      margin: 2em auto 1em auto;
+      display: block;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+      color: #222;
+      font-weight: bold;
+    }
+    .lang-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 300px;
+      margin: 2em auto;
+    }
+    .lang-btn {
+      background: #e0e0e0;
+      color: #111;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      padding: 1em;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .lang-btn:hover {
+      background: #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="MNC Logo" class="logo">
+  <h1>MNC InfoPoint</h1>
+  <div class="lang-btns" id="langBtns"></div>
+  <script>
+    // Hole Bauwagen-ID aus der URL (z.B. start.html?id=A118)
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "";
+
+    // Sprachen und Zielseiten definieren
+    const languages = [
+      { code: "de", label: "Deutsch" },
+      { code: "fr", label: "Français" },
+      { code: "it", label: "Italiano" }
+    ];
+
+    // Buttons erzeugen
+    const btnsDiv = document.getElementById("langBtns");
+    btnsDiv.innerHTML = languages.map(lang =>
+      `<a class="lang-btn" href="${lang.code}.html?id=${id}">${lang.label}</a>`
+    ).join("");
+  </script>
+</body>
+</html>
