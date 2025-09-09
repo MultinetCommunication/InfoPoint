@@ -54,9 +54,9 @@
   <h1>MNC InfoPoint</h1>
   <div class="lang-btns" id="langBtns"></div>
   <script>
-    // Hole Bauwagen-ID aus der URL (z.B. start.html?id=A118)
+    // Hole nur die Bauwagen-ID aus der URL (z.B. start.html?id=A118)
     const params = new URLSearchParams(window.location.search);
-    const id = params.get("id") || "";
+    const id = params.get("id");
 
     // Sprachen und Zielseiten definieren
     const languages = [
@@ -65,10 +65,10 @@
       { code: "it", label: "Italiano" }
     ];
 
-    // Buttons erzeugen
+    // Buttons erzeugen – nur mit ?id=..., wenn id existiert
     const btnsDiv = document.getElementById("langBtns");
     btnsDiv.innerHTML = languages.map(lang =>
-      `<a class="lang-btn" href="${lang.code}.html?id=${id}">${lang.label}</a>`
+      `<a class="lang-btn" href="${lang.code}.html${id ? `?id=${id}` : ""}">${lang.label}</a>`
     ).join("");
   </script>
 </body>
