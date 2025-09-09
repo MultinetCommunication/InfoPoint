@@ -170,8 +170,13 @@
     const id = params.get("id") || "";
 
     // Zielseiten für Sicherheitskonzept/Kontakt
-    document.getElementById("btnSafety").href = `index.html?id=${"id"}`;
-    document.getElementById("btnContact").href = `index.html?id=${"id"}';
+  if (id) {
+    document.getElementById("btnSafety").href = `index.html?id=${encodeURIComponent(id)}`;
+    document.getElementById("btnContact").href = `index.html?id=${encodeURIComponent(id)}`;
+  } else {
+    document.getElementById("btnSafety").href = "index.html";
+    document.getElementById("btnContact").href = "index.html";
+  }
   </script>
 </body>
 </html>
