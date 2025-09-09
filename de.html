@@ -162,7 +162,7 @@
     <a class="btn-grey" id="btnSafety" href="#">Sicherheitskonzept</a>
     <a class="btn-grey" id="btnContact" href="#">Kontakt</a>
     <a class="btn-grey" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUOEpOTlZRS1FSREM2R1lSVk1IRFNSNUk2SC4u" target="_blank">Beinaheunfall melden</a>
-    <a class="btn-grey" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNUJUMVJWQUhYWDJXMzVVWlM0MzQ3NEg3Si4u" target="_blank">Apotheke prüfen und ersetzen</a>
+    <a class="btn-grey" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNUJUMVJWQUhYWDJXMzVVWlM0MzQ3NEg3Si4u" target="_blank">Apotheke publizieren</a>
   </div>
   <script>
     // Bauwagen-ID aus URL holen
@@ -173,12 +173,12 @@
       if (link) {
         link.href = 'notfall.html?id=' + encodeURIComponent(id);
       // Zielseiten für Sicherheitskonzept/Kontakt
-    document.getElementById("btnSafety").href = `index.html?id=${encodeURIComponent(id)}`;
-    document.getElementById("btnContact").href = `index.html?id=${encodeURIComponent(id)}`;
-  } else {
-    document.getElementById("btnSafety").href = "index.html";
-    document.getElementById("btnContact").href = "index.html";
-  }
+      document.getElementById("btnSafety").href = `index.html?id=${encodeURIComponent(id)}`;
+      document.getElementById("btnContact").href = `index.html?id=${encodeURIComponent(id)}`;
+    } else {
+      document.getElementById("btnSafety").href = "index.html";
+      document.getElementById("btnContact").href = "index.html";
+    }
   </script>
 </body>
 </html>
