@@ -15,7 +15,7 @@
   },
   {
     "id": "A089",
-    "baustelle": "Wettingen",
+    "baustelle": "Siggenthal",
     "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept%20Energie%20S4N.pdf",
     "bauleiter_name": "Jeton Avdili",
     "bauleiter_tel": "+41782222628"
@@ -199,8 +199,8 @@
     "id": "A020",
     "baustelle": "Wettingen",
     "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept%20Energie%20S4N.pdf",
-    "bauleiter_name": "HauptNr. ZH",
-    "bauleiter_tel": "+41435216060"
+    "bauleiter_name": "Jeton Avdili",
+    "bauleiter_tel": "+41782222628"
   },
   {
     "id": "A051",
