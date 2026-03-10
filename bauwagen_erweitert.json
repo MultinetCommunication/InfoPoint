@@ -71,10 +71,10 @@
   },
   {
     "id": "A009",
-    "baustelle": "Reserve",
-    "sicherheit_url": null,
-    "bauleiter_name": "HauptNr. ZH",
-    "bauleiter_tel": "+41435216060"
+    "baustelle": "Niederglatt",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Niederglatt.pdf",
+    "bauleiter_name": "Blerim Basha",
+    "bauleiter_tel": "+41762813851"
   },
   {
     "id": "A048",
