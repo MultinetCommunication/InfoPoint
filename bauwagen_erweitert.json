@@ -8,10 +8,10 @@
   },
   {
     "id": "A079",
-    "baustelle": "Zürich",
+    "baustelle": "Lager Wettingen",
     "sicherheit_url": null,
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": "+41435216060"
   },
   {
     "id": "A089",
@@ -29,24 +29,24 @@
   },
   {
     "id": "A050",
-    "baustelle": "Cham",
-    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "baustelle": "Lager Wettingen",
+    "sicherheit_url": null,
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": "+41435216060"
   },
   {
     "id": "A071",
-    "baustelle": "Cham",
-    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "baustelle": "Lager Wettingen",
+    "sicherheit_url": null,
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": "+41435216060"
   },
   {
     "id": "A019",
-    "baustelle": "Zürich",
+    "baustelle": "Lager Wettingen",
     "sicherheit_url": null,
-    "bauleiter_name": "Lutz Gottschalk",
-    "bauleiter_tel": "+41791092205"
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": "+41435216060"
   },
   {
     "id": "A085",
@@ -64,10 +64,10 @@
   },
   {
     "id": "A112",
-    "baustelle": "Cham",
+    "baustelle": "Fislisbach",
     "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "bauleiter_name": "Arbnor Beqiraj",
+    "bauleiter_tel": "+41791980287"
   },
   {
     "id": "A009",
@@ -99,10 +99,10 @@
   },
   {
     "id": "A070",
-    "baustelle": "Cham",
-    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "baustelle": "Lager Wettingen",
+    "sicherheit_url": null,
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": ""+41435216060""
   },
   {
     "id": "A035",
