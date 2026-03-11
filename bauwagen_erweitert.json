@@ -65,7 +65,7 @@
   {
     "id": "A112",
     "baustelle": "Fislisbach",
-    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept_Fislisbach-2.pdf",
     "bauleiter_name": "Arbnor Beqiraj",
     "bauleiter_tel": "+41791980287"
   },
@@ -127,10 +127,10 @@
   },
   {
     "id": "A061",
-    "baustelle": "Zürich",
-    "sicherheit_url": null,
-    "bauleiter_name": "Enrico Dahme",
-    "bauleiter_tel": "+41783054141"
+    "baustelle": "Fislisbach",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept_Fislisbach-2.pdf",
+    "bauleiter_name": "Arbnor Beqiraj",
+    "bauleiter_tel": "+41791980287"
   },
   {
     "id": "A097",
@@ -204,10 +204,10 @@
   },
   {
     "id": "A051",
-    "baustelle": "Zürich",
-    "sicherheit_url": null,
-    "bauleiter_name": "Hasan Keka",
-    "bauleiter_tel": "+41768066060"
+    "baustelle": "Fislisbach",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept_Fislisbach-2.pdf",
+    "bauleiter_name": "Arbnor Beqiraj",
+    "bauleiter_tel": "+41791980287"
   },
   {
     "id": "A012",
@@ -232,10 +232,10 @@
    }, 
   {
     "id": "A114",
-    "baustelle": "Zürich",
-    "sicherheit_url": null,
-    "bauleiter_name": "Blerim Basha",
-    "bauleiter_tel": "+41762813851"
+    "baustelle": "Fislisbach",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheitskonzept_Fislisbach-2.pdf",
+    "bauleiter_name": "Arbnor Beqiraj",
+    "bauleiter_tel": "+41791980287"
   },
   {
     "id": "A060",
