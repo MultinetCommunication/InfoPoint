@@ -141,10 +141,10 @@
   },
   {
     "id": "A078",
-    "baustelle": "Zürich",
+    "baustelle": "Lager Wettingen",
     "sicherheit_url": null,
-    "bauleiter_name": "Hasan Keka",
-    "bauleiter_tel": "+41768066060"
+    "bauleiter_name": "Hauptnummer",
+    "bauleiter_tel": "+41435216060"
   },
   {
     "id": "A115",
@@ -211,8 +211,8 @@
   },
   {
     "id": "A012",
-    "baustelle": "Oberglatt",
-    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept%20Baustellen_Projekte%20MNC_Oberglatt_1.1.pdf",
+    "baustelle": "Niederglatt",
+    "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Niederglatt.pdf",
     "bauleiter_name": "Blerim Basha",
     "bauleiter_tel": "+41762813851"
   },
