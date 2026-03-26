@@ -116,7 +116,7 @@
     "baustelle": "Sursee",
     "sicherheit_url": null,
     "bauleiter_name": "Hasan Keka",
-    "bauleiter_tel": "+41 76 806 60 60"
+    "bauleiter_tel": "+41768066060"
   },
   {
     "id": "A036",
@@ -217,7 +217,7 @@
     "bauleiter_tel": "+41762813851"
   },
   {
-    "id": "A 018",
+    "id": "A018",
     "baustelle": "Cham",
     "sicherheit_url": "https://github.com/MultinetCommunication/InfoPoint/raw/main/Sicherheitskonzepte/Sicherheits_Gesundheitsschutzkonzept_Cham.pdf",
     "bauleiter_name": "Enrico Dahme",
