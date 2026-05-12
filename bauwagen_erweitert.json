@@ -271,6 +271,12 @@
     "sicherheit_url": null,
     "bauleiter_name": "Hauptnummer ZH",
     "bauleiter_tel": "+41435216060"
-  }  
-  
+  },
+  {
+    "id": "MNC",
+    "baustelle": "MNC InfoPoint",
+    "sicherheit_url": "https://multinetcommunication.github.io/InfoPoint/Sicherheitskonzepte%20allg/sicherheitskonzept-mnc-allgemein.html",
+    "bauleiter_name": "Multinet Communication AG",
+    "bauleiter_tel": "+41435216060"
+  } 
 ]
