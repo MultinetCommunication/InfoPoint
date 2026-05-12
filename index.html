@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>MNC InfoPoint</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,128 +17,224 @@
       flex-direction: column;
       align-items: center;
     }
+
     .header {
       margin-top: 2em;
       margin-bottom: 1em;
     }
+
     .logo {
       width: 80vw;
       max-width: 300px;
       margin-bottom: 1em;
       display: block;
     }
+
     h1 {
       font-size: 2em;
       color: #222;
       font-weight: bold;
-      margin: 0 0 1em 0;
+      margin: 0 0 0.3em 0;
     }
+
+    .subtitle {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+
     .details {
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       padding: 2em 1em;
       max-width: 400px;
       width: 100%;
       margin: 1em auto 2em auto;
       text-align: left;
+      box-sizing: border-box;
     }
+
+    .info-row {
+      margin-top: 1.3em;
+      line-height: 1.5;
+    }
+
     .info-label {
       font-weight: bold;
       color: #444;
-      margin-right: 0.5em;
     }
+
+    .center {
+      text-align: center;
+    }
+
     .notfound {
       color: #d32f2f;
       font-weight: bold;
       margin-top: 2em;
       text-align: center;
+      max-width: 400px;
+      padding: 1em;
     }
-    @media (max-width: 500px) {
-      .details {
-        padding: 1em 0.5em;
-        max-width: 98vw;
-      }
-      .logo {
-        max-width: 220px;
-      }
-    }
-    .btn-sicherheitskonzept {
+
+    .btn-sicherheitskonzept,
+    .btn-notfall {
       background: #e0e0e0;
       color: #111;
-      font-size: 1.1em;
+      font-size: 1.05em;
       border: none;
-      border-radius: 8px;
-      padding: 0.8em 1.5em;
+      border-radius: 10px;
+      padding: 0.9em 1.2em;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      margin-top: 1.5em;
-      display: inline-block;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-top: 1.2em;
+      display: block;
+      text-align: center;
     }
-    .btn-sicherheitskonzept:hover {
+
+    .btn-sicherheitskonzept:hover,
+    .btn-sicherheitskonzept:active,
+    .btn-notfall:hover,
+    .btn-notfall:active {
       background: #cccccc;
+      transform: scale(0.99);
+    }
+
+    .btn-notfall {
+      background: #d32f2f;
+      color: #fff;
+    }
+
+    .btn-notfall:hover,
+    .btn-notfall:active {
+      background: #b71c1c;
+    }
+
+    .warning {
+      margin-top: 1.5em;
+      color: #d32f2f;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 500px) {
+      .details {
+        padding: 1.2em 0.8em;
+        max-width: 94vw;
+      }
+
+      .logo {
+        max-width: 220px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="header">
     <img src="logo.png" alt="MNC Logo" class="logo">
     <h1>InfoPoint</h1>
+    <div class="subtitle" id="subtitle"></div>
   </div>
+
   <div class="details" id="details">
-    <div style="text-align:center;">
+    <div class="center">
       <span class="info-label">ID:</span>
       <span id="bauwagenId"></span>
     </div>
+
+    <div id="standortSection"></div>
     <div id="bauleiterSection"></div>
     <div id="sicherheitsSection"></div>
+    <div id="notfallSection"></div>
   </div>
+
   <div class="notfound" id="notfound" style="display:none;">
-    Kein Eintrag für diese Bauwagen-ID gefunden/Aucune entrée trouvée pour cet ID de roulotte de chantier/Nessuna voce trovata per questo ID di baracca da cantiere.
+    Kein Eintrag für diese ID gefunden.<br>
+    Aucune entrée trouvée pour cet ID.<br>
+    Nessuna voce trovata per questo ID.
   </div>
+
   <script>
-    // Bauwagen-ID aus der URL holen
     const params = new URLSearchParams(window.location.search);
-    const id = params.get("id") || "";
+
+    // Fallback: Wenn keine ID vorhanden ist, wird der allgemeine MNC InfoPoint geöffnet
+    const id = params.get("id") || "MNC";
+
     document.getElementById("bauwagenId").textContent = id;
 
-    // Lade bauwagen_erweitert.json und zeige die Infos
-    fetch('bauwagen_erweitert.json')
+    fetch("bauwagen_erweitert.json")
       .then(response => response.json())
       .then(data => {
-        const wagen = data.find(w => w.id === id);
-        if (wagen) {
-          // Bauleiter
+        const eintrag = data.find(w => w.id === id);
+
+        if (eintrag) {
+          const isGeneral = eintrag.id === "MNC";
+
+          document.getElementById("subtitle").textContent = isGeneral
+            ? "Allgemeiner Zugang"
+            : "Baustellen- / Bauwageninformationen";
+
+          document.getElementById("standortSection").innerHTML = `
+            <div class="info-row">
+              <span class="info-label">
+                Standort / Chantier / Cantiere:
+              </span><br>
+              ${eintrag.baustelle || "-"}
+            </div>
+          `;
+
           document.getElementById("bauleiterSection").innerHTML = `
-            <div style="margin-top:1.5em;">
+            <div class="info-row">
               <span class="info-label">
-              Bauleiter/<br>
-              chef de chantier/<br>
-              capocantiere:</span> ${wagen.bauleiter_name || "-"}
-              <br>
-              <br>
+                Kontakt / Contact / Contatto:
+              </span><br>
+              ${eintrag.bauleiter_name || "-"}
+              <br><br>
               <span class="info-label">
-              Telefon/<br>
-              téléphone/<br>
-              telefono:</span> <a href="tel:${wagen.bauleiter_tel}">${wagen.bauleiter_tel || "-"}</a>
-            </div>`;
-          // Sicherheitskonzept
-          if (wagen.sicherheit_url && typeof wagen.sicherheit_url === "string" && wagen.sicherheit_url.length > 10) {
+                Telefon / Téléphone / Telefono:
+              </span><br>
+              <a href="tel:${eintrag.bauleiter_tel}">${eintrag.bauleiter_tel || "-"}</a>
+            </div>
+          `;
+
+          if (eintrag.sicherheit_url && typeof eintrag.sicherheit_url === "string" && eintrag.sicherheit_url.length > 10) {
             document.getElementById("sicherheitsSection").innerHTML = `
-              <a class="btn-sicherheitskonzept" href="${wagen.sicherheit_url}" target="_blank">Sicherheitskonzept/concept de sécurité/concetto di sicurezza</a>
+              <a class="btn-sicherheitskonzept"
+                 href="${eintrag.sicherheit_url}"
+                 target="_blank">
+                Sicherheitskonzept<br>
+                Concept de sécurité<br>
+                Piano di sicurezza
+              </a>
             `;
           } else {
             document.getElementById("sicherheitsSection").innerHTML = `
-              <div style="margin-top:1.5em;color:#d32f2f;">
+              <div class="warning">
                 Zu diesem Standort ist kein Sicherheitskonzept abgelegt.<br>
                 Aucun concept de sécurité n’est déposé pour ce site.<br>
-                Nessun concetto di sicurezza è depositato per questo site.
-                </div>
+                Nessun piano di sicurezza è depositato per questo sito.
+              </div>
             `;
           }
+
+          document.getElementById("notfallSection").innerHTML = `
+            <a class="btn-notfall"
+               href="notfall.html?id=${encodeURIComponent(id)}"
+               target="_self">
+              Notfall<br>
+              Urgence<br>
+              Emergenza
+            </a>
+          `;
+
         } else {
           document.getElementById("details").style.display = "none";
           document.getElementById("notfound").style.display = "block";
@@ -145,7 +242,7 @@
       })
       .catch(() => {
         document.getElementById("details").style.display = "none";
-        document.getElementById("notfound").textContent = "Die Bauwagen-Daten konnten nicht geladen werden.";
+        document.getElementById("notfound").textContent = "Die InfoPoint-Daten konnten nicht geladen werden.";
         document.getElementById("notfound").style.display = "block";
       });
   </script>
