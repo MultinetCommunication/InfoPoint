@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>MNC InfoPoint</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,65 +12,126 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      min-height: 100vh;
     }
+
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 2em 1em;
+    }
+
     .logo {
-      width: 100%;
+      width: 80vw;
       max-width: 300px;
-      margin: 2em auto 1em auto;
+      margin: 1em auto 1.5em auto;
       display: block;
     }
+
     h1 {
       font-size: 2em;
-      margin-bottom: 1em;
+      margin-bottom: 0.3em;
       color: #222;
       font-weight: bold;
     }
+
+    .subtitle {
+      color: #555;
+      font-size: 1em;
+      margin-bottom: 2em;
+    }
+
     .lang-btns {
       display: flex;
       flex-direction: column;
       gap: 1em;
-      max-width: 300px;
-      margin: 2em auto;
+      max-width: 360px;
+      margin: 0 auto 2em auto;
     }
+
     .lang-btn {
       background: #e0e0e0;
       color: #111;
       font-size: 1.2em;
       border: none;
-      border-radius: 8px;
-      padding: 1em;
+      border-radius: 12px;
+      padding: 1.1em;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      display: block;
     }
-    .lang-btn:hover {
+
+    .lang-btn:hover,
+    .lang-btn:active {
       background: #cccccc;
+      transform: scale(0.99);
+    }
+
+    .footer {
+      margin-top: 2em;
+      font-size: 0.85em;
+      color: #777;
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        max-width: 230px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .lang-btn {
+        font-size: 1.05em;
+        padding: 1em;
+      }
     }
   </style>
 </head>
-<body>
-  <img src="logo.png" alt="MNC Logo" class="logo">
-  <h1>MNC InfoPoint</h1>
-  <div class="lang-btns" id="langBtns"></div>
-  <script>
-    // Hole nur die Bauwagen-ID aus der URL (z.B. start.html?id=A118)
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
 
-    // Sprachen und Zielseiten definieren
+<body>
+  <div class="container">
+
+    <img src="logo.png" alt="MNC Logo" class="logo">
+
+    <h1>MNC InfoPoint</h1>
+
+    <div class="subtitle">
+      Bitte Sprache auswählen<br>
+      Veuillez choisir une langue<br>
+      Selezionare la lingua
+    </div>
+
+    <div class="lang-btns" id="langBtns"></div>
+
+    <div class="footer">
+      Multinet Communication AG
+    </div>
+
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    // Wenn keine ID vorhanden ist, wird automatisch der allgemeine InfoPoint verwendet
+    const id = params.get("id") || "MNC";
+
     const languages = [
-      { code: "de", label: "Deutsch" },
-      { code: "fr", label: "Français" },
-      { code: "it", label: "Italiano" }
+      { code: "de", label: "🇩🇪 Deutsch" },
+      { code: "fr", label: "🇫🇷 Français" },
+      { code: "it", label: "🇮🇹 Italiano" }
     ];
 
-    // Buttons erzeugen – nur mit ?id=..., wenn id existiert
     const btnsDiv = document.getElementById("langBtns");
+
     btnsDiv.innerHTML = languages.map(lang =>
-      `<a class="lang-btn" href="${lang.code}.html${id ? `?id=${id}` : ""}">${lang.label}</a>`
+      `<a class="lang-btn" href="${lang.code}.html?id=${encodeURIComponent(id)}">${lang.label}</a>`
     ).join("");
   </script>
+
 </body>
 </html>
