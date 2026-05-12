@@ -81,6 +81,21 @@
     .tile:hover, .tile:active {
       background: #b71c1c;
     }
+    .plan-title {
+  background: #444;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.plan-tile {
+  background: #555;
+  font-size: 1.1em;
+}
+
+.plan-tile:hover,
+.plan-tile:active {
+  background: #333;
+}
     @media (max-width: 500px) {
       .logo {
         max-width: 220px;
@@ -108,5 +123,42 @@
     <a class="tile" href="tel:1414">REGA (Flugrettung) 1414</a>
     <a class="tile" href="tel:145">TOX (Vergiftung) 145</a>
   </div>
+  <div class="emergency-title plan-title">
+  Notfallpläne
+</div>
+
+<div class="tiles plan-tiles">
+
+  <a class="tile plan-tile"
+     href="erste-hilfe.pdf"
+     target="_blank">
+    Erste Hilfe
+  </a>
+
+  <a class="tile plan-tile"
+     href="erste-hilfe-elektrounfall.png"
+     target="_blank">
+    Erste Hilfe Elektrounfälle
+  </a>
+
+  <a class="tile plan-tile"
+     href="brand.png"
+     target="_blank">
+    Brand / Evakuierung
+  </a>
+
+  <a class="tile plan-tile"
+     href="elektrobrand.png"
+     target="_blank">
+    Elektrobrand
+  </a>
+
+  <a class="tile plan-tile"
+     href="umweltgefaehrdung.pdf"
+     target="_blank">
+    Umweltgefährdung
+  </a>
+
+</div>
 </body>
 </html>
