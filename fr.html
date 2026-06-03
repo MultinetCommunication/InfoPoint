@@ -118,29 +118,68 @@
       transform: scale(0.99);
     }
 
-    .btn-grey {
-      background: #e0e0e0;
-      color: #111;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 12px;
-      padding: 1em;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      letter-spacing: 0.5px;
-      width: 100%;
-      box-sizing: border-box;
-      display: block;
-    }
+   .btn-blue {
+  background: #005ea8;
+  color: #fff;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 12px;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(0,94,168,0.25);
+  letter-spacing: 0.5px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
 
-    .btn-grey:hover,
-    .btn-grey:active {
-      background: #cccccc;
-      transform: scale(0.99);
-    }
+.btn-blue:hover,
+.btn-blue:active {
+  background: #00457c;
+  transform: scale(0.99);
+}
+
+.btn-green {
+  background: #2e7d32;
+  color: #fff;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 12px;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(46,125,50,0.25);
+  letter-spacing: 0.5px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.btn-green:hover,
+.btn-green:active {
+  background: #1b5e20;
+  transform: scale(0.99);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  margin: 0.2em 0;
+}
+
+.section-label {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: -0.2em;
+  margin-bottom: -0.3em;
+}
 
     @media (max-width: 500px) {
 
@@ -167,7 +206,8 @@
       }
 
       .btn-red,
-      .btn-grey {
+      .btn-blue,
+      .btn-green {
         font-size: 1em;
         padding: 0.9em;
       }
@@ -195,39 +235,57 @@
 
   </div>
 
-  <div class="main-btns">
+<div class="main-btns">
 
-    <a class="btn-red" id="btnEmergency" href="#">
-      Urgence
-    </a>
+  <a class="btn-red" id="btnEmergency" href="#">
+    Urgence
+  </a>
 
-    <a class="btn-grey" id="btnSafety" href="#">
-      Concept de sécurité
-    </a>
+  <hr class="section-divider">
 
-    <a class="btn-grey" id="btnContact" href="#">
-      Contact
-    </a>
-
-    <a class="btn-grey"
-       href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUOEpOTlZRS1FSREM2R1lSVk1IRFNSNUk2SC4u"
-       target="_blank">
-      Déclarer un quasi-accident
-    </a>
-
-    <a class="btn-grey"
-       href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNUJUMVJWQUhYWDJXMzVVWlM0MzQ3NEg3Si4u"
-       target="_blank">
-      Contrôler/remplacer la pharmacie
-    </a>
-
-    <a class="btn-grey"
-       href="https://skynet.ch/document/2066/2105"
-       target="_blank">
-      Fiches de données de sécurité – Produits chimiques
-    </a>
-
+  <div class="section-label">
+    Pour les collaborateurs et partenaires
   </div>
+
+  <a class="btn-blue" id="btnSafety" href="#">
+    Concept de sécurité
+  </a>
+
+  <a class="btn-blue"
+     href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUOEpOTlZRS1FSREM2R1lSVk1IRFNSNUk2SC4u"
+     target="_blank">
+    Déclarer un quasi-accident
+  </a>
+
+  <a class="btn-blue"
+     href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNUJUMVJWQUhYWDJXMzVVWlM0MzQ3NEg3Si4u"
+     target="_blank">
+    Contrôler/remplacer la pharmacie
+  </a>
+
+  <a class="btn-blue"
+     href="https://skynet.ch/document/2066/2105"
+     target="_blank">
+    Fiches de données de sécurité – Produits chimiques
+  </a>
+
+  <hr class="section-divider">
+
+  <div class="section-label">
+    Pour les riverains et les tiers
+  </div>
+
+  <a class="btn-green" id="btnContact" href="#">
+    Contact
+  </a>
+
+  <a class="btn-green"
+     href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNlJOVzA2RUpHVk03NTM3TUpONU1URzZXTS4u"
+     target="_blank">
+    Avis sur le chantier
+  </a>
+
+</div>
 
   <script>
 
