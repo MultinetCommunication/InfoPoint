@@ -118,9 +118,9 @@
       transform: scale(0.99);
     }
 
-    .btn-grey {
-      background: #e0e0e0;
-      color: #111;
+    .btn-blue {
+      background: #005ea8;
+      color: #fff;
       font-size: 1.1em;
       border: none;
       border-radius: 12px;
@@ -129,17 +129,56 @@
       font-weight: bold;
       text-decoration: none;
       transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,94,168,0.25);
       letter-spacing: 0.5px;
       width: 100%;
       box-sizing: border-box;
       display: block;
     }
 
-    .btn-grey:hover,
-    .btn-grey:active {
-      background: #cccccc;
+    .btn-blue:hover,
+    .btn-blue:active {
+      background: #00457c;
       transform: scale(0.99);
+    }
+
+    .btn-green {
+      background: #2e7d32;
+      color: #fff;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 12px;
+      padding: 1em;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(46,125,50,0.25);
+      letter-spacing: 0.5px;
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    .btn-green:hover,
+    .btn-green:active {
+      background: #1b5e20;
+      transform: scale(0.99);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid #ddd;
+      width: 100%;
+      margin: 0.2em 0;
+    }
+
+    .section-label {
+      color: #666;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-top: -0.2em;
+      margin-bottom: -0.3em;
     }
 
     @media (max-width: 500px) {
@@ -167,7 +206,8 @@
       }
 
       .btn-red,
-      .btn-grey {
+      .btn-blue,
+      .btn-green {
         font-size: 1em;
         padding: 0.9em;
       }
@@ -201,30 +241,42 @@
       Notfall
     </a>
 
-    <a class="btn-grey" id="btnSafety" href="#">
+    <a class="btn-blue" id="btnSafety" href="#">
       Sicherheitskonzept
     </a>
 
-    <a class="btn-grey" id="btnContact" href="#">
+    <a class="btn-blue" id="btnContact" href="#">
       Kontakt
     </a>
 
-    <a class="btn-grey"
+    <a class="btn-blue"
        href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUOEpOTlZRS1FSREM2R1lSVk1IRFNSNUk2SC4u"
        target="_blank">
       Beinaheunfall melden
     </a>
 
-    <a class="btn-grey"
+    <a class="btn-blue"
        href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNUJUMVJWQUhYWDJXMzVVWlM0MzQ3NEg3Si4u"
        target="_blank">
       Apotheke prüfen und ersetzen
     </a>
 
-    <a class="btn-grey"
+    <a class="btn-blue"
        href="https://skynet.ch/document/2066/2105"
        target="_blank">
       Sicherheitsdatenblätter Chemikalien
+    </a>
+
+    <hr class="section-divider">
+
+    <div class="section-label">
+      Für Anwohner und Dritte
+    </div>
+
+    <a class="btn-green"
+       href="https://forms.office.com/Pages/ResponsePage.aspx?id=hLQr_ScYuEWkDhPQHrwHiRkHTZJiTvlMo1g2A6ggmIxUNlJOVzA2RUpHVk03NTM3TUpONU1URzZXTS4u"
+       target="_blank">
+      Feedback Baustelle
     </a>
 
   </div>
